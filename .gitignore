@@ -17,3 +17,4 @@ Thumbs.db
 #specific to dev
 ._*
 .htaccess
+.gitkeep
