@@ -1,0 +1,15 @@
+{
+   "project":"grav-plugin-youtube",
+   "platforms":{
+      "grav":{
+         "nodes":{
+            "theme":[
+               {
+                  "source":"/",
+                  "destination":"/user/plugins/youtube"
+               }
+            ]
+         }
+      }
+   }
+}

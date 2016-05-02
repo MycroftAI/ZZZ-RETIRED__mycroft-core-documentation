@@ -1,0 +1,11 @@
+email: ryan.sipes@mycroft.ai
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+fullname: 'Ryan Sipes'
+title: Admin
+state: enabled
+hashed_password: $2y$10$pj8IX3ANHBOdlOuYOnKIHOSvPUkz.3BnGAHujLQTQgZEfAFwsaRVm

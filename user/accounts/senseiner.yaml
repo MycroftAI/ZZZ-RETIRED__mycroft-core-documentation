@@ -1,0 +1,12 @@
+email: alex@bewaves.com
+fullname: 'Alejandro Seoane'
+title: Admin
+state: enabled
+access:
+  admin:
+    login: 'true'
+    super: 'true'
+  site:
+    login: 'true'
+hashed_password: $2y$10$Qs84gWC4AIRrNTilT9ff1OjEq1ZqhIk72OJwICFPb44CNg4Hdwzzm
+language: en

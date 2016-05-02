@@ -1,0 +1,19 @@
+enabled: true
+built_in_css: true
+add_editor_button: true
+player_parameters:
+  autoplay: 0
+  cc_load_policy: 0
+  color: white
+  controls: 0
+  disablekb: 0
+  enablejsapi: 0
+  fs: 1
+  iv_load_policy: 1
+  loop: 0
+  modestbranding: 0
+  playsinline: 0
+  rel: 0
+  showinfo: 0
+  vq: default
+privacy_enhanced_mode: false

@@ -1,0 +1,35 @@
+{% extends "forms/field.html.twig" %}
+{% set defaults = config.plugins.form %}
+{% set files = defaults.files|merge(field|default([])) %}
+
+{% block input %}
+
+    {% if not plugin and not theme %}
+        The "file" input field cannot be used in Pages Blueprints. It's intended to be used for Plugins and Themes blueprints.
+        Use the "pagemediaselect" type instead.
+    {% else %}
+        {% if value %}
+            <img src="{{ uri.rootUrl == '/' ? '/' : uri.rootUrl ~ '/'}}{{ value }}" alt="{{ value|replace({(files.destination ~ '/'): ''}) }}" />
+            <a href="{{ uri.addNonce(base_url_relative ~
+                '/media/' ~ base64_encode(base_path ~ '/' ~ value) ~
+                '/task' ~ config.system.param_sep ~ 'removeFileFromBlueprint' ~
+                '/blueprint' ~ config.system.param_sep ~ files.blueprint ~
+                '/field' ~ config.system.param_sep ~ files.name ~
+                '/redirect' ~ config.system.param_sep ~ base64_encode(uri.path), 'admin-form', 'admin-nonce') }}">
+                <i class="fa fa-close"></i>
+            </a>
+        {% endif %}
+
+        <div class="form-input-wrapper {{ field.size }}">
+            <input
+                {# required attribute structures #}
+                name="{{ (scope ~ field.name)|fieldName ~ '[]' }}"
+                {% block input_attributes %}
+                    type="file"
+                    {% if files.accept %}accept="{{ files.accept|join(',') }}"{% endif %}
+                    {{ parent() }}
+                {% endblock %}
+             />
+        </div>
+    {% endif %}
+{% endblock %}

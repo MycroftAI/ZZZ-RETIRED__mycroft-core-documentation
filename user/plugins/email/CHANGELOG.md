@@ -1,0 +1,65 @@
+# v2.3.0
+## 04/20/2016
+
+1. [](#improved)
+    * Added debug option to enable logging on SwiftMailer.
+    * Updated SwiftMailer from v5.1.0 to v5.4.1.
+    * Added an option in the Admin settings to enable `starttls`
+1. [](#bugfix)
+    * Correctly name TLS in the Admin settings, the label was `TTS` (but the value was correctly named `tls`)
+
+# v2.2.0
+## 02/05/2016
+
+1. [](#new)
+    * Allow to send attachments in forms
+    * Added French translation
+1. [](#improved)
+    * Throw an exception when trying to send emails without a `from` or `to` parameters setup, to intercept less meaningful errors and provide a better description on how to fix the problem
+    * Changed SMTP password in admin to use a password field instead of plain text
+
+# v2.1.0
+## 12/18/2015
+
+1. [](#new)
+    * Added missing `content_type` to email.yaml
+    * Added default values for CC and BCC
+ 1. [](#improved)
+    * Improved documentation of new email params in `README.md`
+    * Moved config setting of `mailer.default` to `mailer.engine`
+
+# v2.0.0
+## 12/11/2015
+
+1. [](#new)
+	* Added support for from/sender name (Thomas Keitel)
+	* Added support for message content type (Thomas Keitel)
+	* Added support for reply addresses (Thomas Keitel)
+	* Added support for CC/BCC (Thomas Keitel)
+	* Added support for multiple body parts (Thomas Keitel)
+1. [](#bugfix)
+    * Fix email engine selection (z38)
+
+# v1.0.0
+## 11/20/2015
+
+1. [](#bugfix)
+    * Fix for issue with no body parameter specified
+
+# v0.2.1
+## 09/11/2015
+
+1. [](#bugfix)
+    * Fix onFormProcessed event
+
+# v0.2.0
+## 08/11/2015
+
+1. [](#improved)
+    * Disable `enable` in admin
+
+# v0.1.0
+## 08/04/2015
+
+1. [](#new)
+    * ChangeLog started...

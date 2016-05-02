@@ -1,0 +1,15 @@
+Here is your Mycroft Software Dev Kit.
+
+What's on the SD Card:
+
+The Current Mycroft Source Code
+
+Steps to Working with and Contributing to Mycroft
+
+1. Provide Github username to survey from Mycroft in Email to get access to repo (you need this to get the up-to-date code).
+
+2. Follow README.md in mycroft directory for instructions on using this code.
+
+3. Mic and speaker are necessary to run Mycroft with your voice.
+
+4. Docs are available at https://docs.mycroft.ai
