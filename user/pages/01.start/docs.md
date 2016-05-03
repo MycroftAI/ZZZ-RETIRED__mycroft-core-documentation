@@ -5,42 +5,44 @@ taxonomy:
         - docs
 ---
 
-# Title
+Mycroft
+==========
 
-## And the Subtitle
+# Getting Started in Ubuntu - Development Environment
+- Install ` virtualenv` >= 13.1.2 and `virtualenvwrapper` (Restart session)
+- Install the following native packages
+  - `libtool`
+  - `autoconf`
+  - `bison`
+  - `swig`
+  - `libglib2.0-dev`
+  - `portaudio19-dev`
+  - `python-dev`
+  - `curl`
+  - `mpg123`
+  - `espeak`
+- run `dev_setup.sh` (feel free to read it, as well)
 
-Morbi mattis ullamcorper velit. Donec id justo. Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit. Vestibulum dapibus nunc ac augue. Duis lobortis massa imperdiet quam.
+## Configuration
+Mycroft configuration consists of 3 possible config files.
+- `defaults.ini`, which lives inside the mycroft codebase/distribution
+- `/etc/mycroft/mycroft.ini`
+- `$HOME/.mycroft/mycroft.ini`
 
-Donec mollis hendrerit risus. Vivamus quis mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Vivamus laoreet. Fusce neque.
+When the configuration loader starts, it looks in those locations in that order, and loads ALL configuration. Keys that exist in multiple config files will be overridden by the last file to contain that config value. This results in a minimal amount of config being written for a specific device/user, without modifying the distribution files.
 
-Suspendisse eu ligula. Quisque malesuada placerat nisl. Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit amet eros. Cras ultricies mi eu turpis hendrerit fringilla. Phasellus dolor.
-
-Some Tips
-
->>>>> Morbi mattis ullamcorper velit. Donec id justo. Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit. Vestibulum dapibus nunc ac augue. Duis lobortis massa imperdiet quam.
-
-### Another Title
-
-* Suspendisse eu ligula. Quisque malesuada placerat nisl. Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit amet eros. Cras ultricies mi eu turpis hendrerit fringilla. Phasellus dolor.
-* Suspendisse eu ligula. Quisque malesuada placerat nisl. 
-* Quisque malesuada placerat nisl. Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit amet eros. [Our Site](https://mycroft.ai) to find out the latest goings on.
-
-### Edit this Page
-
-Morbi mattis ullamcorper velit. Donec id justo. Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit. Vestibulum dapibus nunc ac augue. Duis lobortis massa imperdiet quam.
-
-### Create a New Page
-
-[ui-tabs position="top-left" active="0" theme="badges"]
-[ui-tab title="Hide"]
-[/ui-tab]
-
-[ui-tab title="Show Code"]
-In tempor sed sapien eu porttitor. Aliquam cursus facilisis ante. Etiam neque nunc, blandit vel lacus et, faucibus accumsan lacus. Proin posuere varius purus quis faucibus. Quisque et enim vitae orci [placerat tincidunt](#) id ac eros. Fusce et gravida libero. 
+## Starting the Virtualenv
+To ensure that you are in the Mycroft virtualenv before trying to start the services, as everything is installed there, Run:
 ```
-Phasellus cursus odio ex, in **mattis lorem tincidunt** vel.
-Donec nibh odio, dapibus non ligula a, semper ornare massa. Nulla consectetur eu nunc sed ultrices. Integer at turpis dolor.
-Phasellus cursus odio ex, in **mattis lorem tincidunt** vel.
+workon mycroft
 ```
-[/ui-tab]
-[/ui-tabs]
+
+### Running the initial stack
+- run `PYTHONPATH=. python client/speech/main.py` # the main speech detection loop, which prints events to stdout and broadcasts them to a message bus
+- run `PYTHONPATH=. python client/messagebus/service/main.py` # the main message bus, implemented via web sockets
+- run `PYTHONPATH=. python client/skills/main.py` # main skills executable, loads all skills under skills dir
+
+### Running stack via the script
+- run `./start.sh service`
+- run `./start.sh skills`
+- run `./start.sh voice`
