@@ -1,12 +1,9 @@
 ---
-title: Getting Started
+title: Development Setup
 taxonomy:
     category:
         - docs
 ---
-
-Mycroft
-==========
 
 # Getting Started in Ubuntu - Development Environment
 - Install ` virtualenv` >= 13.1.2 and `virtualenvwrapper` (Restart session)
@@ -22,6 +19,9 @@ Mycroft
   - `mpg123`
   - `espeak`
 - run `dev_setup.sh` (feel free to read it, as well)
+
+# Getting set up using Docker
+- <i>WIP: More information coming soon.</i>
 
 ## Configuration
 Mycroft configuration consists of 3 possible config files.
