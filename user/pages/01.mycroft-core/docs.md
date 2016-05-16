@@ -1,6 +1,5 @@
 ---
 title: 'What is Mycroft?'
-child_type: docs
 taxonomy:
     category:
         - docs
