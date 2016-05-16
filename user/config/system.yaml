@@ -1,5 +1,5 @@
 home:
-  alias: '/start'
+  alias: '/mycroft-core'
 
 pages:
   theme: learn2
