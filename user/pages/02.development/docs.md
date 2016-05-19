@@ -23,6 +23,13 @@ taxonomy:
 # Getting set up using Docker
 - <i>WIP: More information coming soon.</i>
 
+## Cerberus Device and Account Manager
+Mycroft AI, Inc. - the company behind Mycroft maintains the Cerberus device and account management system. Developers can sign up at https://cerberus.mycroft.ai
+
+Once signed up you can pair a device and use our API keys for services, such as the STT (Speech-to-Text) API. It also uses allows you to use our API keys for weather, Wolfram-Alpha, and various other skills.
+
+If you do not wish to use our service, you may insert your own API keys into the configuration file.
+
 ## Configuration
 Mycroft configuration consists of 3 possible config files.
 - `defaults.ini`, which lives inside the mycroft codebase/distribution
