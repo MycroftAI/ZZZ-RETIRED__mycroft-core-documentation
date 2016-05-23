@@ -18,6 +18,11 @@ taxonomy:
   - `curl`
   - `mpg123`
   - `espeak`
+# In addition, if you are running Ubuntu 16.04 or another O/S, you may need to install:
+  - `libffi-dev`
+  - `libssl-dev`
+
+- run `build_host_setup.sh`
 - run `dev_setup.sh` (feel free to read it, as well)
 
 # Getting set up using Docker
