@@ -71,7 +71,7 @@ With virtualenv-wrapper:
 workon mycroft
 ```
 
-+Without virtualenv-wrapper:
+Without virtualenv-wrapper:
 ```
 source ~/.virtualenvs/mycroft/bin/activate
 ```
