@@ -102,3 +102,28 @@ source ~/.virtualenvs/mycroft/bin/activate
 - run `PYTHONPATH=. python client/skills/main.py` # main skills executable, loads all skills under skills dir
 
 *Note: The above scripts are blocking, so each will need to be run in a separate terminal session. Each terminal session will require that the virtualenv be activated. There are very few reasons to use this method.*
+
+# Pairing your device
+
+## Getting the pairing code
+![Cerberus portal page](CerbWalk0-termcode.png)
+First, you need to get the pairing code from Mycroft. To do this, say `Mycroft, register my device`. Listen for what he says or if you are running Mycroft in a terminal, you can look at the terminal running the voice process. You should be able to see what code he says, as shown in the lower right corner of the image above.
+
+## Pairing with Cerberus
+![Cerberus portal page](CerbWalk1-portal.png)
+Go to cerberus.mycroft.ai and click the `Sign in with Google` link. 
+
+![Cerberus portal page](CerbWalk2-chooseaccount.png)
+Select the Google account you want to use with your Cerberus account.
+
+![Cerberus portal page](CerbWalk3-permissions.png)
+Select Allow on the next page to allow Mycroft access to basic information about your account.
+
+![Cerberus portal page](CerbWalk4-homepage.png)
+Select Premium Backer on the homepage, or Continue to Pair Device if you do not want to be a premium backer.
+
+![Cerberus portal page](CerbWalk5-pairing.png)
+Put the pairing code that you got from Mycroft in the first step into the box on this page and click Submit.
+
+![Cerberus portal page](CerbWalk6-registered.png)
+Once registered, your Mycroft device should show on your list of paired devices.
