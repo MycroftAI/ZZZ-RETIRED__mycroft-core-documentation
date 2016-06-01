@@ -11,7 +11,7 @@ Mycroft software as needed. We strongly encourage any developer(that
 means you!) to contribute to the Mycroft core and make it even better. 
 This can be anything from a simple bugfix to a full-fledged skill that 
 you think Mycroft should have. The sky is the limit - you can use 
-Mycroft to interface with vehicles, games, smart applicances around the 
+Mycroft to interface with vehicles, games, smart appliances around the 
 home, and much more. 
 
 ## Where can I find the Mycroft repository?
@@ -23,7 +23,7 @@ The Mycroft core repository can be found
 
 Before you contribute, take a look at the 
 [guidelines](https://github.com/MycroftAI/mycroft-core/blob/master/CONTRIBUTING.md) 
-for those who whant to contribute to the repository.
+on how to properly contribute to the code.
 
 ## Joining the Slack channel
  
@@ -40,6 +40,5 @@ community has been talking about and working on.
 ## Contributing to this documentation
 
 If you find an error in this documentation or want to update it
-to reflect new changes, go to the [Mycroft documentation page]
-(https://github.com/MycroftAI/mycroft-core-documentation),
+to reflect new changes, go to the [Mycroft documentation page](https://github.com/MycroftAI/mycroft-core-documentation),
 make your desired changes, and submit a pull request.
