@@ -112,6 +112,7 @@ First, you need to get the pairing code from Mycroft. To do this, say `Mycroft, 
 ## Pairing with Cerberus
 ![Cerberus portal page](CerbWalk1-portal.png)
 Go to cerberus.mycroft.ai and click the `Sign in with Google` link. 
+(Note: we are working to support authentication methods other than Google. Stay tuned for those changes and an updated guide for them.)
 
 ![Cerberus portal page](CerbWalk2-chooseaccount.png)
 Select the Google account you want to use with your Cerberus account.
