@@ -31,6 +31,26 @@ The following packages are required for setting up the development environment,
  - `portaudio19`
  - `mpg123`
 
+ The following packages are required for setting up the development environment on Fedora 23
+
+ - `git`
+ - `python 2`
+ - `python-setuptools`
+ - `python-virtualenv`
+ - `pygobject2`
+ - `python-virtualenvwrapper`
+ - `libtool`
+ - `libffi`
+ - `openssl`
+ - `autoconf`
+ - `bison`
+ - `swig`
+ - `glib2`
+ - `s3cmd`
+ - `portaudio`
+ - `portaudio-devel`
+ - `mpg123` (Available in RPMFusion)
+
 # Getting set up using Docker
 - <i>WIP: More information coming soon.</i>
 
