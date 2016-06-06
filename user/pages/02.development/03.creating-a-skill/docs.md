@@ -5,34 +5,63 @@ taxonomy:
         - docs
 ---
 
-# Setting up the folders
+# Creating a skill
 
-Once you've come up with your idea for a skill, make a new folder in `mycroft-core/mycroft/skills` with your desired skill name.
+## Setting up the folders
 
-For skills, there should generally be three things inside this folder - a folder called `dialog`, a file called `__init__.py`, and a folder called `vocab`. We'll go through these one by one so you know why each is there.
+Once you've come up with your idea for a skill, make a new folder in `mycroft-core/mycroft/skills` with the desired skill name. Please note that this folder name should be lower-case, and do not use the names of frequently used python modules such as `time` to avoid conflicts.
 
-###### Dialog
-The `dialog` folder contains subfolders for each spoken language the skill supports, each of which has `.dialog` files for what Mycroft should say when he executes a skill.
+For skills, there should generally be four things inside this folder - a folder called `dialog`, a file called `__init__.py`, a folder called `test`, and a folder called `vocab`. The folder structure should look like this:
+```
+- my-skill-name
+-- dialog
+-- test
+-- vocab
+-- __init__.py
+```
 
-For my welcome skill, I create the `dialog` folder. Inside, I create the subfolder `en-us`, which corresponds to American English. This folder should contain .dialog files, which will determine what Mycroft will say.
-For now, I create the file `Welcome.dialog`, which will contain various phrases that Mycroft will say. In it, I put on the first line `You're welcome`.
-###### Python script
-__init__.py is where you put the actual bulk of the skill, including a class that inherits from the MycroftSkill class and contains functions that pertain to how the skill operates. For now, I just create the file `__init__.py` and leave it blank.
+### Dialog
+The `dialog` folder contains subfolders for each spoken language the skill supports, each of which has `.dialog` files for what Mycroft should say when he executes a skill. The general structure looks like
+```
+-dialog
+--en-us
+---my.file1.dialog.
+---my.file2.dialog
+--pt-br
+---my.file.1.dialog
+---my.file.2.dialog
+```
 
-###### Vocab
-The `vocab` folder again contains subfolders for each langauge supported, each of which has `.voc` files that determine what Mycroft will listen for to trigger the skill.
+Take a look at the [Welcome Skill](https://github.com/MycroftAI/mycroft-core/tree/master/mycroft/skills/welcome) as an example. Its `dialog` folder has an `en-us` subfolder in it, which corresponds to American English. Inside is the dialog file `welcome.dialog`. It looks like
+```
+You're welcome
+No problem
+```
+Note that Mycroft will not say both of these things when the skill is executed. Instead, he randomly chooses from each of the lines in the file to determine what to say.
 
-For my welcome skill, I create the `vocab` folder. Inside, I create the subfolder `en-us` againf  f
-For now, I create the file `WelcomeKeyword.voc`, which will contain phrases that Mycroft will respond to. I edit my Welcome.voc folder to look like this:
+### `__init__.py`
+`__init__.py` is where you put the actual bulk of the skill, including a class that inherits from the MycroftSkill class and contains functions that pertain to how the skill operates. For now, just create an empty `__init__.py` file.
+
+### Vocab
+The `vocab` folder contains subfolders for each langauge supported, like `en-us`. Inside each language folder, we place `.voc` files which contain phrases or keywords that determine what Mycroft will listen for to trigger the skill.
+```
+-dialog
+--en-us
+---my.file.voc.
+--pt-br
+---my.file.voc
+```
+
+Looking at the [Welcome Skill](https://github.com/MycroftAI/mycroft-core/tree/master/mycroft/skills/welcome) again, there is a `WelcomeKeyword.voc` file in the `en-us` folder that contains the vocabulary for the Welcome Skill. It contains a list of keywords and phrases that trigger the skill, and looks like the following:
 ```
 thank you
 thanks
 ```
-This is because I want Mycroft to respond when I say both `thanks` and `thank you`.
+In this case, whenever a user says either `thank you` or `thanks`, Mycroft will be able to identify that those phrases are related to the Welcome Skill, and trigger the logic for that skill.
 
-# Creating the skill
+## Creating your first skill
 
-## Header
+### Header
 When creating the skill, you need to start by importing the proper libraries for use in skills. 
 
 ```python
@@ -64,7 +93,7 @@ __author__ = 'eward'
 LOGGER = getLogger(__name__)
 ```
 
-## Creating the class
+### Creating the class
 
 I then declare the class as inheriting from MycroftSkill and declare its various member functions.
 
