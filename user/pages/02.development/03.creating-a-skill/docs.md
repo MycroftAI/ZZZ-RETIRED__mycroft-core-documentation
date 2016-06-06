@@ -75,9 +75,9 @@ from mycroft.util.log import getLogger
 `dirname` is used so that the class knows what files are in the current directory. Specifically, this is so that it can access the `.dialog` and `.voc`files.
 IntentBuilder is used to register your new "intent", which is some action that Mycroft performs that requires a keyword. A single skill can have multiple intents, but my welcome skill only has one.
 MycroftSkill is the class that your skill will inherit from.
-getLogger is used ???.
+getLogger is a wrapper for the python `logging` object that is used to log errors or relevant information.
 
-You can then put your name as the `__author__` variable and create the LOGGER variable.
+You can then put your name as the `__author__` variable and create a logger.
 
 ```python
 __author__ = 'first_initial_last_name'
