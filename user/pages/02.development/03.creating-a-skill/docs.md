@@ -32,12 +32,18 @@ The `dialog` folder contains subfolders for each spoken language the skill suppo
 ---my.file.2.dialog
 ```
 
-Take a look at the [Welcome Skill](https://github.com/MycroftAI/mycroft-core/tree/master/mycroft/skills/welcome) as an example. Its `dialog` folder has an `en-us` subfolder in it, which corresponds to American English. Inside is the dialog file `welcome.dialog`. It looks like
+Take a look at the [Hello World Skill](https://github.com/MycroftAI/mycroft-core/tree/master/mycroft/skills/helloworld) as an example. Its `dialog` folder has an `en-us` subfolder in it, which corresponds to American English. Inside are three dialog files. As an example, look inside `welcome.dialog`. It looks like
 ```
-You're welcome
-No problem
+Any time.
+Glad to be of service.
+Glad to help.
+My Pleasure.
+No problem.
+You're welcome.
 ```
-Note that Mycroft will not say both of these things when the skill is executed. Instead, he randomly chooses from each of the lines in the file to determine what to say.
+Note that Mycroft will not say all of these things when the skill is executed. Instead, he randomly chooses from each of the lines in the file to determine what to say.
+
+There are generally seperate .dialog files for each intent defined in the skill.
 
 ### `__init__.py`
 `__init__.py` is where you put the actual bulk of the skill, including a class that inherits from the MycroftSkill class and contains functions that pertain to how the skill operates. For now, just create an empty `__init__.py` file.
@@ -52,12 +58,22 @@ The `vocab` folder contains subfolders for each langauge supported, like `en-us`
 ---my.file.voc
 ```
 
-Looking at the [Welcome Skill](https://github.com/MycroftAI/mycroft-core/tree/master/mycroft/skills/welcome) again, there is a `WelcomeKeyword.voc` file in the `en-us` folder that contains the vocabulary for the Welcome Skill. It contains a list of keywords and phrases that trigger the skill, and looks like the following:
+Looking at the [Hello World Skill](https://github.com/MycroftAI/mycroft-core/tree/master/mycroft/skills/helloworld) again, there is a `ThankYouKeyword.voc` file in the `en-us` folder that contains the vocabulary for the thank you intent in the Hello World Skill. It contains a list of keywords and phrases that trigger the intent, and looks like the following:
 ```
 thank you
 thanks
 ```
-In this case, whenever a user says either `thank you` or `thanks`, Mycroft will be able to identify that those phrases are related to the Welcome Skill, and trigger the logic for that skill.
+In this case, whenever a user says either `thank you` or `thanks`, Mycroft will be able to identify that those phrases are related to the Hello World Skill, and trigger the logic for that skill.
+
+There are generally seperate .voc files for each intent, and sometimes multiple files per intent.
+
+### `Test`
+The `test` folder contains a subfolder for intent, inside of which are `.intent.json` files. These are used to test whether your code properly creates intents.
+```
+-test
+--intent
+---sample1.intent.json
+```
 
 ## Creating your first skill
 
@@ -73,19 +89,12 @@ from mycroft.util.log import getLogger
 ```
 
 `dirname` is used so that the class knows what files are in the current directory. Specifically, this is so that it can access the `.dialog` and `.voc`files.
-IntentBuilder is used to register your new "intent", which is some action that Mycroft performs that requires a keyword. A single skill can have multiple intents, but my welcome skill only has one.
+IntentBuilder is used to register your new "intent", which is how Mycroft interprets what you say to determine what to do. A single skill can have many intents. For example, the Hello World skill has three intents.
 MycroftSkill is the class that your skill will inherit from.
 getLogger is a wrapper for the python `logging` object that is used to log errors or relevant information.
 
-You can then put your name as the `__author__` variable and create a logger.
-
-```python
-__author__ = 'first_initial_last_name'
-
-LOGGER = getLogger(__name__)
-```
-
-For me, this would look like 
+You can then put your name as the `__author__` variable and create a logger for use in debugging.
+In the Hello World skill, this looks like
 
 ```python
 __author__ = 'eward'
@@ -95,79 +104,86 @@ LOGGER = getLogger(__name__)
 
 ### Creating the class
 
-I then declare the class as inheriting from MycroftSkill and declare its various member functions.
+You then declare the class as inheriting from MycroftSkill and declare its various member functions.
 
-The skill file takes the general form of
-
+In the hello world skill, the general outline looks like
 ```python
-class <skillname>Skill(MycroftSkill):
+class HelloWorldSkill(MycroftSkill):
     def __init__(self):
     
     def initialize(self):
     
-    def handle_<skill_name_intent_1>_intent(self, message):
-    
+    def handle_thank_you_intent(self, message):
+    ...
     def stop(self):
     
 def create_skill():
-    return <skillname>Skill()
+    return HelloWorldSkill()
 ```
-
-For my welcome skill, this basic outline looks like
-```python
-class WelcomeSkill(MycroftSkill):
-    def __init__(self):
-    
-    def initialize(self):
-    
-    def handle_welcome_intent(self, message):
-    
-    def stop(self):
-    
-def create_skill():
-    return WelcomeSkill()
-```
-I'll now go through each of these functions and show what should be in each.
+Each of these functions does something different.
 
 #### __init__
-This is the constructor for the class, called when a new <skillname> object is created. In it you should call the constructor of the MycroftSkill class using `super` and initialize any member variable to the values you need
-For me, this looks like
+This is the constructor for the class, called when a new <skillname> object is created. In it you should call the constructor of the MycroftSkill class using `super` and initialize any member variable to the values you need.r
+In the Hello World skill, this looks like
 ```python
 def __init__(self):
-    super(WelcomeSkill, self).__init__(name="WelcomeSkill") #Creates a MycroftSkill object and names it WelcomeSkill
+        super(HelloWorldSkill, self).__init__(name="HelloWorldSkill")
 ```
 
 #### initialize
 This is where you should load all of the files in the directory and build each intent you want to create.
-For the welcome skill, this looks like
+For the Hello World skill, this looks like
 ```python
 def initialize(self):
-    self.load_data_files(dirname(__file__)) #Loads the files in the directory
-    
-    welcome_intent = IntentBuilder("WelcomeIntent").require("WelcomeKeyword").build()
-    self.register_intent(welcome_intent, self.handle_welcome_intent)
+    self.load_data_files(dirname(__file__))
+
+    thank_you_intent = IntentBuilder("ThankYouIntent").\
+        require("ThankYouKeyword").build()
+    self.register_intent(thank_you_intent, self.handle_thank_you_intent)
+    ...
 ```
-This creates an intent named welcome_intent that requires a WelcomeKeyword, which is one of the phrases in the WelcomeKeyword.voc files.
-It then registers that the function handle_welcome_intent is what should be called if the WelcomeKeyword is found.
+This creates an intent named thank_you_intent that requires a ThankYouKeyword, which is one of the phrases in the ThankYouKeyword.voc files.
+It then registers that the function handle_thank_you_intent is what should be called if the ThankYouKeyword is found.
+All of the other intents are registered in the same way.
 
 #### handle_<intent_name>_intent
-This is where you tell Mycroft to actually do what you want him to do. Frequently this will include something like a call to an API, but in this case, it will just be a very simple function call.
+This is where you tell Mycroft to actually do what you want him to do. This can range from something like a call to an API to opening an application. In the Hello World skill, each intent simply tells Mycroft to speak from the dialog file..
 ```python
-def handle_welcome_intent(self, message):
-    self.speak_dialog('Welcome')
+def handle_thank_you_intent(self, message):
+    self.speak_dialog("welcome")
 ```
-This simply tells Mycroft to randomly select one of the pieces of dialogue from the Welcome.dialog file and speak it. In my case, the Welcome.dialog folder only contains the line `You're welcome`, so Mycroft will only say that one line.
+This simply tells Mycroft to randomly select one of the pieces of dialogue from the welcome.dialog file and speak it. 
 In your skill, you can include as many ways of phrasing what he says as you want.
 
 Note that in most Mycroft skills, the `handle_intent` function will include an API call or something else with a potential failure case, so it is best to enclose what you want to run in a `try`/`except` block.
 Note also that it always takes two arguments, self and message, even if you never use message.
+
 #### stop
-This is the simplest of the essential functions. It should simply contain the keyword `pass`:
+This function is used to determine what Mycroft does if `stop` is said while this skill is running. In the Hello World skill, since Mycroft is saying simple phrases, the stop function just contains the word pass:
 ```python
 def stop(self)
     pass
 ```
 The keyword `pass` does nothing when executed. It is simply used when code is required syntactically but you do not want any code to run.
+For an example of a skill that uses the stop function, look at the [NPR News skill](https://github.com/MycroftAI/mycroft-core/tree/master/mycroft/skills/npr_news).
 
 #### create_skill
 This is outside of the class definition, and is used to actually create a skill object when the script is called.
+
+## Testing your skill
+Creating tests is an essential part of making your skill, and ensures that you have properly built your skill and that Mycroft can determine your intents from a sample phrase.
+
+### Creating tests
+Intent tests take the form of an `.intent.json` file with a structure inside that determines whether a particular intent is found. Take a look at the first test file, `sample1.intent.json` in the Hello World skill.
+```
+{
+  "utterance": "Thank you",
+  "intent_type": "ThankYouIntent",
+  "intent": {
+    "ThankYouKeyword": "thank you"
+  }
+}
+```
+`utterance`: This is the sample phrase that you would say to Mycroft, and that should trigger your intents.
+`intent_type`: This is the type of intent that should be found in your sample utterance.
+`intent`: In this structure, you should list each keyword defined by your skill that should be found in the utterance.
