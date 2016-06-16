@@ -1,5 +1,5 @@
 ---
-title: Development Setup
+title: Creating a skill
 taxonomy:
     category:
         - docs
@@ -171,7 +171,7 @@ For an example of a skill that uses the stop function, look at the [NPR News ski
 This is outside of the class definition, and is used to actually create a skill object when the script is called.
 
 ## Testing your skill
-Creating tests is an essential part of making your skill, and ensures that you have properly built your skill and that Mycroft can determine your intents from a sample phrase.
+Creating tests is an essential part of making your skill, and ensures that you have properly created your skill and that Mycroft can determine your intents from a sample phrase.
 
 ### Creating tests
 Intent tests take the form of an `.intent.json` file with a structure inside that determines whether a particular intent is found. Take a look at the first test file, `sample1.intent.json` in the Hello World skill.
