@@ -1,5 +1,5 @@
 ---
-title: Mycroft Features
+title: Skills and Features
 taxonomy:
   category:
     - docs
