@@ -31,6 +31,15 @@ You can also [create an
 account](https://mycroft-ai-slack-invite.herokuapp.com) for our Slack 
 channel and chat with other Mycroft developers.
 
+Channels:
+
+ - **#troubleshooting** (errors and general code issues)
+ - **#futures** (future code chat and dev code sharing)
+ - **#development** (github log and general development discussion)
+ - **#general** (general chat about Mycroft related things)
+ - **#random** (random links and fun AI stuff)
+ - **#mycroft-android** (android app dev)
+
 ## Community forums
 
 Feel free to stop by our [community 

@@ -27,4 +27,4 @@ Open Source software underpins the Internet and impacts all of us every day.  Ar
 
 It is our hope to work with other open source initiatives like TensorFlow and OpenAI to ensure that the future of artificial intelligence is open for all.
 
->>>>>><p>The simplest way to navigate the documentation is to use the <strong>Next</strong> and <strong>Previous</strong> arrows (<i class="fa fa-chevron-left"></i> <i class="fa fa-chevron-right"></i>) on each page. You can see your progress represented by the check marks (<i class="fa fa-check"></i>) in the sidebar.</p>
+><p>The simplest way to navigate the documentation is to use the <strong>Next</strong> and <strong>Previous</strong> arrows (<i class="fa fa-chevron-left"></i> <i class="fa fa-chevron-right"></i>) on each page. You can see your progress represented by the check marks (<i class="fa fa-check"></i>) in the sidebar.</p>
