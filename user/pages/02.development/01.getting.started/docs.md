@@ -66,33 +66,43 @@ The following packages are required for setting up the development environment,
  - `mpg123` (Available in RPMFusion)
 
 # Installing using apt (experimental)
- It is currently possible to install mycroft-core on any Debian based system (amd64 and armhf.) For developers, it is recommended to use the git checkout method. It is also possible to attach an interface to the Mycroft messagebus or use the Skills SDK to develop outside of the core. In this case installing with apt may be useful to you.
+It is currently possible to install mycroft-core on any Debian based system (amd64 and armhf.) For developers, it is recommended to use the git checkout method. It is also possible to attach an interface to the Mycroft messagebus or use the Skills SDK to develop outside of the core. In this case installing with apt may be useful to you.
 
  Enabling TLS for apt
  In order to use a repository with TLS support, it must be enabled.
- `sudo apt-get install apt-transport-https`
- Download and install signing key from keyserver.
+ - `sudo apt-get install apt-transport-https`
+
+
+Download and install signing key from keyserver.
  - `sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F3B1AA8B`
  - `sudo echo "deb http://repo.mycroft.ai/repos/apt/debian debian main" > /etc/apt/sources.list.d/repo.mycroft.ai.list`
- Updating the apt cache to include the new repository
- `sudo apt-get update`
- Installing mycroft-core
- `sudo apt-get install mycroft-core`
 
- Debian package specific notes
- The following system services will be created in `/etc/init.d/`:
+
+Updating the apt cache to include the new repository
+ - `sudo apt-get update`
+
+
+Installing mycroft-core
+ - `sudo apt-get install mycroft-core`
+
+
+Debian package specific notes:
+The following system services will be created in `/etc/init.d/`:
  - `mycroft-messagebus`
  - `mycroft-skills`
  - `mycroft-speech-client`
 
- These services can be started and stopped in this manner:
+
+These services can be started and stopped in this manner:
  - `service mycroft-messagebus start`
  - `service mycroft-messagebus stop`
 
- Log files will also be created.
+
+Log files will also be created.
  - `/var/log/mycroft-messagebus`
  - `/var/log/mycroft-skills`
  - `/var/log/mycroft-speech-client`
+
 
 In addition, a default configuration file will be created in `/etc/mycroft.ini`.
 
