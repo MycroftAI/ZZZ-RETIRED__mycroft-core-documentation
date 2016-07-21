@@ -1,11 +1,15 @@
 ---
-title: 'Changelog'
+title: 'Release Notes'
 taxonomy:
     category:
         - docs
 ---
 [github-releases]:https://github.com/MycroftAI/mycroft-core/releases
 [View the releases on GitHub here.][github-releases]
+
+# v0.7.12
+
+This is a patch release to fix an issue with the manifest file, preventing the new colume sound from being included in the packaging.
 
 # v0.7.11
 
