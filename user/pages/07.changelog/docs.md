@@ -9,7 +9,7 @@ taxonomy:
 
 # v0.7.12
 
-This is a patch release to fix an issue with the manifest file, preventing the new colume sound from being included in the packaging.
+This is a patch release to fix an issue with the manifest file, preventing the new volume sound from being included in the packaging.
 
 # v0.7.11
 
