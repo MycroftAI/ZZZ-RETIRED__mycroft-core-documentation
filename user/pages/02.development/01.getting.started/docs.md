@@ -68,6 +68,8 @@ The following packages are required for setting up the development environment,
 # Installing using apt (experimental)
 It is currently possible to install mycroft-core on any Debian based system (amd64 and armhf.) For developers, it is recommended to use the git checkout method. It is also possible to attach an interface to the Mycroft messagebus or use the Skills SDK to develop outside of the core. In this case installing with apt may be useful to you.
 
+Currently there are two channels: `debian` and `debian-unstable`. The `debian` repository will track releases, with a schedule of release every thursday. Use this for a stable build. The `debian-unstable` repository builds packages based on master, and is build every night or even more frequently. This is to allow us to confirm that changes made to the core wont break the release packages.
+
  Enabling TLS for apt
  In order to use a repository with TLS support, it must be enabled.
  - `sudo apt-get install apt-transport-https`
@@ -75,8 +77,14 @@ It is currently possible to install mycroft-core on any Debian based system (amd
 
 Download and install signing key from keyserver.
  - `sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F3B1AA8B`
+
+
+Create apt source entry (stable releases).
  - `sudo echo "deb http://repo.mycroft.ai/repos/apt/debian debian main" > /etc/apt/sources.list.d/repo.mycroft.ai.list`
 
+
+Alternativly, create apt source entry (unstable, daily master builds or more frequent).
+ - `sudo echo "deb http://repo.mycroft.ai/repos/apt/debian debian-unstable main" > /etc/apt/sources.list.d/repo.mycroft.ai.list`
 
 Updating the apt cache to include the new repository
  - `sudo apt-get update`
