@@ -100,6 +100,9 @@ The following system services will be created in `/etc/init.d/`:
  - `mycroft-skills`
  - `mycroft-speech-client`
 
+Mycroft units will include an additional client for faceplate interaction.
+ - `mycroft-enclosure-client`
+
 
 These services can be started and stopped in this manner:
  - `service mycroft-messagebus start`
