@@ -7,6 +7,14 @@ taxonomy:
 [github-releases]:https://github.com/MycroftAI/mycroft-core/releases
 [View the releases on GitHub here.][github-releases]
 
+# v0.7.13
+
+### Wolfram Changes
+With this new release, the Wolfram Alpha Skill now gives much more concise responses. Rather than reading several definitions for a word, Mycroft will only read the first. Along with that, when Wolfram cannot find anything for a particular query, rather than speaking the result from the Did you mean? query, he simply mentions he could not find any results but did find something for an alternative query.
+
+### Hardware Test
+This release also brings in a basic hardware test. When activated by holding the button for 5 seconds, Mycroft will now run through tests to verify that the display, knob, microphone, and speaker are all working properly.
+
 # v0.7.12
 
 This is a patch release to fix an issue with the manifest file, preventing the new volume sound from being included in the packaging.
