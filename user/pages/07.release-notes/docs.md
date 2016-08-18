@@ -7,6 +7,18 @@ taxonomy:
 [github-releases]:https://github.com/MycroftAI/mycroft-core/releases
 [View the releases on GitHub here.][github-releases]
 
+# v0.7.14
+
+### Hardware Changes
+--Hardware units now show a spinning eye animation when shut down, rebooted, or turned on, and stop displaying it when power is fully on or off
+--When volume is changed using the unit encoder dial, the eyes now display the current volume (0-11) for a few seconds, then reset to normal
+--By holding down the encoder button on a unit for five seconds, users can access menu mode, which allows power control (reboot and shutdown), factory reset, and the hardware test (replacing the automatic hardware test trigger), and will soon include wi-fi setup
+
+### Other Changes
+--Volume levels can now be configured by the user to determine what each level (0-11) corresponds to
+--Mycroft's speech is now broken up into smaller individual chunks, making it easier to understand
+
+
 # v0.7.13
 
 ### Wolfram Changes
