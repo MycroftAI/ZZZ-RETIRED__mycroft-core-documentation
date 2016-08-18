@@ -6,7 +6,7 @@ taxonomy:
 ---
 # Setting up the development environment
 
-Currently, Mycroft only runs in Linux environments. If you already have a Linux desktop environment, you can go ahead and skip to the `Downloading Mycroft Core` section. 
+Currently, Mycroft only runs in Linux environments. If you already have a Linux desktop environment, you can go ahead and skip to the `Downloading Mycroft Core` section.
 
 For those who use MacOS or Windows, you can use something like [VirtualBox](https://www.virtualbox.org/wiki/Downloads) to set up a virtual Linux environment. To do this:
  - Install VirtualBox or another similar piece of software
@@ -15,14 +15,14 @@ For those who use MacOS or Windows, you can use something like [VirtualBox](http
 
 ## Downloading Mycroft Core
 
-Once you have your development environment set up, you need to download the latest version of `mycroft-core` from github. 
+Once you have your development environment set up, you need to download the latest version of `mycroft-core` from github.
 To do this, you can either directly download it from our [github page](https://github.com/MycroftAI/mycroft-core) or, if you already know how to use git, you can clone it using git.
 
 ## Starting in Ubuntu - Development Environment
  - Get into the mycroft-core folder that you downloaded using `cd mycroft-core`
  - run `./build_host_setup.sh` (installs debian packages with apt-get, please read it)
  - run `./dev_setup.sh` (feel free to read it, as well)
- 
+
 ## Starting in other environments
 
 The following packages are required for setting up the development environment,
@@ -45,7 +45,7 @@ The following packages are required for setting up the development environment,
  - `portaudio19`
  - `mpg123`
 
- The following packages are required for setting up the development environment on Fedora 23
+ The following packages are required for setting up the development environment on Fedora 24
 
  - `git`
  - `python 2`
@@ -55,7 +55,9 @@ The following packages are required for setting up the development environment,
  - `python-virtualenvwrapper`
  - `libtool`
  - `libffi`
+ - `libffi-devel`
  - `openssl`
+ - `openssl-devel`
  - `autoconf`
  - `bison`
  - `swig`
@@ -64,8 +66,8 @@ The following packages are required for setting up the development environment,
  - `portaudio`
  - `portaudio-devel`
  - `mpg123` (Available in RPMFusion)
- 
-After installing the necessary packages, make sure to run the `dev_setup.sh` script that is provided in the `mycroft-core` folder. 
+
+After installing the necessary packages, make sure to run the `dev_setup.sh` script that is provided in the `mycroft-core` folder.
 
 # Installing using apt (experimental)
 It is currently possible to install mycroft-core on any Debian based system (amd64 and armhf.) For developers, it is recommended to use the git checkout method. It is also possible to attach an interface to the Mycroft messagebus or use the Skills SDK to develop outside of the core. In this case installing with apt may be useful to you.
