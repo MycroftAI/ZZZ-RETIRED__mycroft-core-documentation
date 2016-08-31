@@ -27,9 +27,9 @@ Most of the Alsa configuration is done on the command line. Below are some usefu
  - alsamixer
     - Alsamixer is a built-in [sound mixer](http://www.linuxplanet.com/linuxplanet/tutorials/7134/1) that lets you select your device and get it running from the command line.
 
-### Raspbian and Ubuntu Jessie
+### Raspbian, Ubuntu 14.04 LTS, Ubuntu 16.04 LTS, and Debian Jessie
 
-Jessie has moved the alsa configuration files. See below for the new files and locations. 
+Since the release of Debian Jessie the alsa configuration files have moved. See below for the new files and locations. 
 
  - General Alsa docs: ![docs](http://alsa.opensrc.org/MultipleCards#alsa.conf_structure)
  - Config files
@@ -94,7 +94,7 @@ Knowing the card # you can get the rest of the info by changing card1 to your ca
        subdevices_count: 1
        subdevices_avail: 1
 
-### Raspbian and Ubuntu Wheezy
+### Raspbian, Ubuntu 12.04 LTS, and Debian Wheezy
 
  - Config files
     - /etc/modprobe.d/alsa-base.conf
