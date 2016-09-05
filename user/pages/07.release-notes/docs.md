@@ -7,6 +7,21 @@ taxonomy:
 [github-releases]:https://github.com/MycroftAI/mycroft-core/releases
 [View the releases on GitHub here.][github-releases]
 
+# v0.7.16
+
+- Added support to the Enclosure API for the visualization of Text to Speech (using "visemes")
+- Mycroft's default Mimic text to speech support now sends visemes to the Enclosure.  On a Mycroft unit, this produces lip syncing on screen when it speaks
+
+This integrates changes from the last enclosure code release:
+
+- Illumination changes also impact the matrix dispaly
+- Added visemes, which will be visible once changes are made to the TTS client
+- Removed the weather icons, added a generic mechanism for sending encoded icons across the serial line
+
+It also breaks display of text and sprites, see https://github.com/MycroftAI/mycroft-core/issues/358
+This will be addressed in an upcoming release.
+
+
 # v0.7.15
 
 Refined the enclosure menu behavior:
