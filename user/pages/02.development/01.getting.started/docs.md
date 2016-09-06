@@ -65,6 +65,7 @@ The following packages are required for setting up the development environment,
  - `s3cmd`
  - `portaudio`
  - `portaudio-devel`
+ - `redhat-rpm-config`
  - `mpg123` (Available in RPMFusion)
 
 After installing the necessary packages, make sure to run the `dev_setup.sh` script that is provided in the `mycroft-core` folder.
