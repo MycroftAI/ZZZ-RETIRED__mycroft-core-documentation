@@ -66,6 +66,7 @@ The following packages are required for setting up the development environment,
  - `portaudio`
  - `portaudio-devel`
  - `redhat-rpm-config`
+ - `bzip2`
  - `mpg123` (Available in RPMFusion)
 
 After installing the necessary packages, make sure to run the `dev_setup.sh` script that is provided in the `mycroft-core` folder.
