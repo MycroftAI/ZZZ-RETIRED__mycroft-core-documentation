@@ -7,6 +7,30 @@ taxonomy:
 [github-releases]:https://github.com/MycroftAI/mycroft-core/releases
 [View the releases on GitHub here.][github-releases]
 
+# v0.7.20
+### Wifi Setup Client (for Mycroft unit)
+- When no internet connection found (usually during STT) the instructions now direct user to press button on the unit
+- Added auto-check for internet connection on bootup
+- Wifi local access point activates at start, user gets guided into connecting
+- Once connected to access point, captive web portal allows selection and configuration of desired wifi
+
+# v0.7.18 / v0.7.19
+- First pass of wifi setup, recalled
+
+# v0.7.17
+
+### Push to Talk
+- Pressing the button when it isn't listening starts it listening
+- Pressing the button when listening will stop the listen
+- Added a mycroft.util.signal() mechanism for out-of-thread communication
+- Pressing the button now creates an "buttonPress" signal from the Enclosure.  The viseme playback and aplay check for the 'buttonPress' signal to abort.
+
+### Misc
+- Removed "Sorry I didn't catch that", irritating during false activations
+- added configuration for the Mimic TTS engine to change speech speed
+- ArchLinux build script changes
+- Introduced (but didn't enable) the wifisetup client
+
 # v0.7.16
 
 - Added support to the Enclosure API for the visualization of Text to Speech (using "visemes")
