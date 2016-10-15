@@ -31,7 +31,7 @@ Most of the Alsa configuration is done on the command line. Below are some usefu
 
 Since the release of Debian Jessie the alsa configuration files have moved. See below for the new files and locations. 
 
- - General Alsa docs: ![docs](http://alsa.opensrc.org/MultipleCards#alsa.conf_structure)
+ - General Alsa [docs](http://alsa.opensrc.org/MultipleCards#alsa.conf_structure)
  - Config files
     - /usr/share/alsa/alsa.conf
     - ~/.asoundrc
