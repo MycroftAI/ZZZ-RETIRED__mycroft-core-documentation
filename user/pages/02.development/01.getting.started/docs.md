@@ -18,9 +18,9 @@ For those who use MacOS or Windows, you can use something like [VirtualBox](http
 Once you have your development environment set up, you need to download the latest version of `mycroft-core` from github.
 To do this, you can either directly download it from our [github page](https://github.com/MycroftAI/mycroft-core) or, if you already know how to use git, you can clone it using git.
 
-## Starting in Ubuntu - Development Environment
+## Creating a Development Environment in Ubuntu/Debian
  - Get into the mycroft-core folder that you downloaded using `cd mycroft-core`
- - run `./build_host_setup.sh` (installs debian packages with apt-get, please read it)
+ - run `./build_host_setup_debian.sh` (installs debian packages with apt-get, please read it)
  - run `./dev_setup.sh` (feel free to read it, as well)
 
 ## Starting in other environments
