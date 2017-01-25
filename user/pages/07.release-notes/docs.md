@@ -7,6 +7,22 @@ taxonomy:
 [github-releases]:https://github.com/MycroftAI/mycroft-core/releases
 [View the releases on GitHub here.][github-releases]
 
+# v0.8.1
+### General enhancements
+- Changed network timeout to improve disconnected behavior (#461).  This is most important when first bringing up a unit which has no network connection configured yet.
+- Updating 'requests' package version in requirements.txt (#464).  This fixes sporadic SSL3 errors that were appearing in the logs with long STT requests on some platforms.
+- Pairing now says "zero" instead of "oh" (#401)
+- NEW: Skills will load from one-level-deep subfolder.  This makes it simpler to use git to install a group of skills if the author keeps several in one repo.  For example, it will now find "/opt/mycroft/skills/bobs_skills/calendar/__init__.py" as well as "/opt/mycroft/skills/bobs_calendar/__init__.py" 
+
+### Picroft support
+- Stop splitting speech at period when on Picroft (#466).  The lockup that can happen with analog audio output (an issue with Raspbian/Pi hardware) happen much less frequently.
+
+### Developer tools
+- Fixed unit tests, added "cleanup" to prevent blocking (#453)
+- Added skill_container to packaged distribution (#450)
+- Bringing Google TTS support up to speed (#454)
+- Update build_host_setup_arch.sh for Arch Linux (#459)
+
 # v0.8.0
 ### New API and web service integration
 - Connenction to the new account management back-end. We have moved to [home.mycroft.ai](https://home.mycroft.ai) from [cerberus.mycroft.ai](https://cerberus.mycroft.ai). Older code is incompatible with the new API so we will continue to maintain Cerberus for some time. Not sure where to pair? Let Mycroft tell you the correct website.
