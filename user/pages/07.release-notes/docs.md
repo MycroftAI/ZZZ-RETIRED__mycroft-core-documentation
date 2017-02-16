@@ -7,24 +7,39 @@ taxonomy:
 [github-releases]:https://github.com/MycroftAI/mycroft-core/releases
 [View the releases on GitHub here.][github-releases]
 
+# v0.8.5
+_Minor bugfix for v0.8.4_
+
+# v0.8.4
+
+### For Picroft:
+* A configuration setting was added for playing wav files. We found that specifying a hardware device for aplay will fix a Raspberry Pi specific ALSA/PulseAudio issue. This can also be used to interact with other audio systems. The new setting are "play_wav_cmdline" and "play_mp3_cmdline", which can be overridden in your /etc/mycroft/mycroft.conf file.
+
+### For Everyone:
+* Added more verbose skill service logging, such as where skills are loaded from and what intents are registered.
+* A wake word detected sound has been added for better interaction. This wav file is configurable as well for your own custom sound!
+* When pairing your device it could be difficult to understand the spoken code. To help with this, we added a NATO-inspired phonetic spelling, such as "C as in Charlie"
+* Load data files for skills automatically when loading the skill. Skills no longer need to call self.load_data_files(dirname(file))
+* The Adapt intent parser version used has been upgraded to 0.3.0
+
 # v0.8.3
-# For the Weather Skill:
-When talking about the current city, the city name is generally not spoken (more natural)
-A "pretty" name of just the city is used instead of the complete name
-Works around the recurring issue with OWM where they report bad min/max temps (same as the current temp)
-Changed "Location is not valid" to "I don't know that location" (people don't say "not valid")
-For the Time Skill:
+### Skill refinements
+#### For the Weather Skill:
+* When talking about the current city, the city name is generally not spoken (more natural)
+* A "pretty" name of just the city is used instead of the complete name
+* Works around the recurring issue with OWM where they report bad min/max temps (same as the current temp)
+* Changed "Location is not valid" to "I don't know that location" (people don't say "not valid")
 
-The timezone is extracted from the device location setting
-Time responses are more varied and shorter
-This change adds MycroftSkill.location_pretty and MycroftSkill.location_timezone properties.
-PR: https://github.com/MycroftAI/mycroft-core/pull/492
+#### For the Time Skill:
+* The timezone is extracted from the device location setting
+* Time responses are more varied and shorter
+* This change adds MycroftSkill.location_pretty and MycroftSkill.location_timezone properties. PR: #492
 
-# Cli improvements:
-"Input:" doesn't get intermingled with the output (usually -- long pauses can still cause it to happen)
-"Output:" is now displayed
-Ctrl+C is handled gracefully
-PR: https://github.com/MycroftAI/mycroft-core/pull/494
+### Cli improvements:
+* "Input:" doesn't get intermingled with the output (usually -- long pauses can still cause it to happen)
+* "Output:" is now displayed, not just spoken
+* Ctrl+C is handled gracefully
+PR: #494
 
 # v0.8.2
 This release enables our new and enhanced location configuration services at https://home.mycroft.ai.  Users can set default locations for their account and for individual devices.  This provides rich location information for Skills running on the Mycroft device, including governmental entity names (city, state, providence, country), GPS coordinates and timezone information.
