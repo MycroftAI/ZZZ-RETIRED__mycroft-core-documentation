@@ -1,5 +1,5 @@
 ---
-title: 'Getting Started- Package Install Method'
+title: 'Package Install'
 taxonomy:
     category:
         - docs
