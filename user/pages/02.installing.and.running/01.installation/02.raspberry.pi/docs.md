@@ -1,5 +1,5 @@
 ---
-title: 'Getting Started- Raspberry Pi'
+title: 'Raspberry Pi Install'
 taxonomy:
     category:
         - docs

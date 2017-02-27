@@ -1,5 +1,5 @@
 ---
-title: 'Getting Started- Downloading the KDE Widget'
+title: 'KDE Widget Install'
 taxonomy:
     category:
         - docs

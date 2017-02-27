@@ -1,5 +1,5 @@
 ---
-title: 'Getting Started- Docker Install'
+title: 'Docker Install'
 taxonomy:
     category:
         - docs

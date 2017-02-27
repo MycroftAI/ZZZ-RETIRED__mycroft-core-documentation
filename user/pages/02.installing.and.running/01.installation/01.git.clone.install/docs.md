@@ -1,5 +1,5 @@
 ---
-title: 'Getting Started- Git Method'
+title: 'Git Clone Install'
 taxonomy:
     category:
         - docs
