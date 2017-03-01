@@ -8,6 +8,32 @@ taxonomy:
 [View the releases on GitHub here.][github-releases]
 
 # v0.8.5
+### Enhancements for the CLI interface. Includes:
+* Interaction history
+* Live, filtered log view
+* Log color-coding
+PR #536 
+
+### Reduce max recording time
+Max recording time is now 10 seconds instead of 30. This deals with cases where a noisy background prevents the listener's silence detection from triggering. 30 seconds was WAY too long to keep listening -- nobody is going to be saying something that long for now.
+PR #529 
+
+### Updated Mimic version to 1.2.0.1
+* Upgraded to a new build process
+* Compiles with GCC 6.2.0
+* added --enable-shared flag for future Pymimic support
+You will need to run `dev_setup.sh` or `./scritps/install-mimic.sh` to upgrade mimic
+PR #525 
+
+### Skill auto reload 
+Mycroft now checks periodically for file system changes in the skills folders. This allows for them to automatically be reloaded without restarting any services.
+PR #524 
+
+### Add `-d` option to `mycroft.sh`
+Enhances the `mycroft.sh` script by adding the `-d` option to start and enter the CLI client directly.
+PR #522 
+
+# v0.8.5
 _Minor bugfix for v0.8.4_
 
 # v0.8.4
