@@ -7,7 +7,7 @@ taxonomy:
 [github-releases]:https://github.com/MycroftAI/mycroft-core/releases
 [View the releases on GitHub here.][github-releases]
 
-# v0.8.5
+# v0.8.6
 ### Enhancements for the CLI interface. Includes:
 * Interaction history
 * Live, filtered log view
