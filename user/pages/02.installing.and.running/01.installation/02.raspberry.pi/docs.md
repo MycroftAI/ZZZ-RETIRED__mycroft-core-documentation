@@ -28,9 +28,9 @@ Then unzip it.
 ##Step 2: Write it to an SD card
 There are instructions on blog post above for Windows, but if you’re using another operating system, check out these guides on Raspberry Pi’s site:
 
-Linux
-Mac OSX
-Windows (Note: Win32 Disk Imager works fine, but we recommend dotNet Disk Imager)
+- [Linux](https://www.raspberrypi.org/documentation/installation/installing-images/linux.md)
+- [Mac OSX](https://www.raspberrypi.org/documentation/installation/installing-images/mac.md)
+- [Windows](https://www.raspberrypi.org/documentation/installation/installing-images/windows.md) (Note: Win32 Disk Imager works fine, but we recommend dotNet Disk Imager)
 
 Just make sure to use the correct image name for the file you downloaded in Step 1:
 For example, the linux command to write to an SD card would be:
