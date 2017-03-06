@@ -21,12 +21,12 @@ pip install -t lib -r requirements.txt
 
 ## Running your skill
 ```
-mycroft-skills-container ./path/to/skill/root
+mycroft-skill-container ./path/to/skill/root
 ```
 
 ## Running a Mycroft skill in isolation
 ```
-mycroft-skills-container ./mycroft/skills/weather
+mycroft-skill-container ./mycroft/skills/weather
 ```
 
 ## Running a skill without the mycroft skills service
