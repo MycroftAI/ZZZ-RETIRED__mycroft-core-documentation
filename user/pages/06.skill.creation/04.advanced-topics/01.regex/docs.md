@@ -1,5 +1,5 @@
 ---
-title: Advanced Topics - Regex
+title: Regex
 taxonomy:
     category:
         - docs
