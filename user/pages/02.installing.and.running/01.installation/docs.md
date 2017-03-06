@@ -6,7 +6,9 @@ taxonomy:
 ---
 # Setting up Mycroft
 
-Currently, Mycroft only runs in Linux environments. If you already have a Linux desktop environment, you can go ahead and skip to the `Downloading Mycroft Core` section.
+Currently, Mycroft only runs in Linux environments. If you already have a Linux desktop environment, you can go ahead and skip to the appropriate install section.
+
+
 
 For those who use MacOS or Windows, you can use something like [VirtualBox](https://www.virtualbox.org/wiki/Downloads) to set up a virtual Linux environment. To do this:
  - Install VirtualBox or another similar piece of software
