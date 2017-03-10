@@ -98,25 +98,3 @@ Activates the weather skill and has Mycroft read you the weather. You are then l
 This let's you record from your microphone for a few seconds and then plays it back. Useful for making sure those two devices work.
 
 
-
-
-### Using Virtualenv and Python
-
-For now, this is mostly helfpul for developing skills for Mycroft and shouldn't be necessary unless you are using some custom skills. To activate your virtualenv.
-
-With virtualenv-wrapper:
-```
-workon mycroft
-```
-
-Without virtualenv-wrapper:
-```
-source ~/.virtualenvs/mycroft/bin/activate
-```
-- run `PYTHONPATH=. python client/speech/main.py` # the main speech detection loop, which prints events to stdout and broadcasts them to a message bus
-- run `PYTHONPATH=. python client/messagebus/service/main.py` # the main message bus, implemented via web sockets
-- run `PYTHONPATH=. python client/skills/main.py` # main skills executable, loads all skills under skills dir
-
-*Note: The above scripts are blocking, so each will need to be run in a separate terminal session. Each terminal session will require that the virtualenv be activated. There are very few reasons to use this method.*
-
-

@@ -7,6 +7,9 @@ taxonomy:
 
 ## Creating your first skill
 
+For this we will still be going over the Hello World Skill from Github:
+[Hello World Skill](https://github.com/MycroftAI/mycroft-core/tree/master/mycroft/skills/helloworld)
+
 ### Header
 When creating the skill, you need to start by importing the proper libraries for use in skills. 
 
