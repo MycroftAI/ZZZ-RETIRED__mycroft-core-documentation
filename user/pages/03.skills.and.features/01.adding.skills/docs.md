@@ -7,9 +7,11 @@ taxonomy:
 
 ##How to add new skills
 
-Mycroft AI is a community project. What does this mean? It means we rely on community members to come up with good use-cases as skills. While Mycroft comes with some functionality out of the box, you can always add more, community written skills. 
+Mycroft AI is a community project. What does this mean? It means we rely on community members to come up with good use-cases as skills. While Mycroft comes with some functionality out of the box, you can always add more community-written skills. 
 
-This is as easy as using git clone on a repo to your skills folder. This varies from device to device. For example, there is a shortcut to the **skills** folder in the Home directory of the Raspberry Pi. This shortcut points to 
+With that comes a minor caveat of a lot of these skills not being fully tested. Some also don't work, but we keep them in the repo as examples to everyone. 
+
+Adding a new skill is as easy as using git clone on a repo to your skills folder. This varies from device to device. For example, there is a shortcut to the **skills** folder in the Home directory of the Raspberry Pi. This shortcut points to 
 ```
 /opt/mycroft/skills
 ```
