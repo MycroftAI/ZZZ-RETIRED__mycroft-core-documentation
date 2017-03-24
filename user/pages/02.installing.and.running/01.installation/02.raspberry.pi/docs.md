@@ -53,8 +53,10 @@ If you haven’t registered this device yet, you’ll do that as well once you�
 
 If you haven’t created an account, you’ll be asked to do so. Use whichever method you prefer. 
 
+
 That's it!
 
 For other resources, such as manual configuration of WiFi and what Microphones work, check out our wiki on Github:
 
 [Picroft Enclosure Wiki](https://github.com/MycroftAI/enclosure-picroft/wiki)
+

@@ -8,6 +8,7 @@ taxonomy:
 [View the releases on GitHub here.][github-releases]
 
 
+
 # v0.8.7
 ### CLI enhancements PR #548 
 * Live microphone meter.  This makes it easier to see if your microphone is hearing anything. 
@@ -20,6 +21,7 @@ taxonomy:
 NOTE:  This is potentially a breaking change for custom skills.  Please verify behavior.
 * Refined skill auto-reload with a self.reload_skill property, providing control over the auto-reload of skills when files in the skill's change.  It is on by default.  Auto-reloatd also honors blacklists.  PR #541 and PR #549 
 * BUGFIX: The Debian build script was missing a dependency.  Thanks SoloVeniaASaludar!  PR #569
+
 
 # v0.8.6
 ### Enhancements for the CLI interface. Includes:
