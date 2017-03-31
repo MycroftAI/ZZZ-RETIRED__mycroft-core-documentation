@@ -56,7 +56,7 @@ If you haven’t created an account, you’ll be asked to do so. Use whichever m
 
 That's it!
 
-For other resources, such as manual configuration of WiFi and what Microphones work, check out our wiki on Github:
+For other resources, such as manual configuration of WiFi, specific hardware tested, and important file locations, check out our wiki on Github:
 
 [Picroft Enclosure Wiki](https://github.com/MycroftAI/enclosure-picroft/wiki)
 
