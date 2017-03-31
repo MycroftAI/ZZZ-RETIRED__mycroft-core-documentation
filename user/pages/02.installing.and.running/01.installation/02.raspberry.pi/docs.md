@@ -11,7 +11,7 @@ taxonomy:
 - Raspberry Pi 3
 - At least 8GB Micro SD Card (the image size is right at 4GB, but we recommend extra space to add more skills)
 - Wired Speakers plugged into the Audio Out 3.5mm jack on the Raspberry Pi
-- USB Microphone (see https://github.com/MycroftAI/enclosure-picroft/wiki/Hardware)
+- USB Microphone (see [the Git Wiki for hardware specifics](https://github.com/MycroftAI/enclosure-picroft/wiki/Hardware))
 - Another device with WiFi connection (Computer, Tablet, or SmartPhone)
 - USB Keyboard & HDMI Compliant Monitor (Optional but recommended for initial setup)
 
@@ -52,3 +52,11 @@ If you haven’t registered this device yet, you’ll do that as well once you�
 
 
 If you haven’t created an account, you’ll be asked to do so. Use whichever method you prefer. 
+
+
+That's it!
+
+For other resources, such as manual configuration of WiFi, specific hardware tested, and important file locations, check out our wiki on Github:
+
+[Picroft Enclosure Wiki](https://github.com/MycroftAI/enclosure-picroft/wiki)
+
