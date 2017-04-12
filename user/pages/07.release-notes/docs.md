@@ -8,6 +8,30 @@ taxonomy:
 [View the releases on GitHub here.][github-releases]
 
 
+# v0.8.8
+### New Features
+* Added "expect_response" flag when speaking.  This is a step towards dialog interaction with no wake-up word will have to be spoken. PR #576
+* Audio from text to speech (TTS) is now cached, avoid unnecessary calls to Mimic.  PR #599
+* Wolfram Alpha skill now only attempts to handle missed intents that look like questions (Who/what/when/etc). PR #601
+
+### Internationalization Support
+* Implemented skill language testing so only skills that support current language will be loaded. PR #622
+* Added localization support for the Sleep/Wake Up mechanism. PR #575
+
+### Build process
+* Updated build instructions for Arch and Fedora. PR #584
+* Updated to use Mimic 1.2.0.2. PR #582
+* Fixed debian build problem. PR #617
+* Missing dependency was causing compile errors on Fedora. PR #573
+* Mimic updates wouldn't overwrite existing installation in install-mimic.sh. PR #580
+
+### Bug fixes
+* Fixed volume increase/decrease, broken by Skill:Intent namespacing. PR #619
+* Commands issued using subprocess.Popen() were remaining open in background.  PR #572
+* Excessive CPU usage due to testing for wake-up word on every chuck received. PR #578
+* Wake-up word was requiring double silence duration at end. PR #586
+* The skill installer skill wasn't catching exit code properly. PR #631
+
 
 # v0.8.7
 ### CLI enhancements PR #548 
