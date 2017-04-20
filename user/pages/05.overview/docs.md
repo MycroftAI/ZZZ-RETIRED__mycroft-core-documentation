@@ -9,22 +9,22 @@ Mycroft Core contains four main services - the messagebus, the skills service, t
 
 ## Overview
 
- - A user says a phrase including the wakeword (`Hey Mycroft` by default)
- - The speech client strips out the wakeword and sends the audio to a speech to text service (Google STT by default)
- - The speech to text service sends back the parsed text, which is sent on the messagebus by the speech client
- - [Adapt](https://adapt.mycroft.ai/) gets the text and tries to match it to an intent registered by one of the skills
- - If it succeeds, the intent it finds is sent on the messagebus, along with what keywords it found
+ - The user says the wakeword (`Hey Mycroft` by default)
+ - The speech client records the subsequent spoken audio and send it to the Mycroft backend (by default) to perform speech to text
+ - The speech to text service sends back the transcription, which is sent on the messagebus by the speech client
+ - The skill client catches the message and uses [Adapt](https://adapt.mycroft.ai/) to match it with an intent registered by one of the skills
+ - If it succeeds, the intent is sent on the messagebus along with what keywords it found
  - The skills service picks up the message and gives it to the skill matching the intent
- - The skill processes the message, does some action with it, and sends any message to be spoken on the messagebus
+ - The skill processes the message, performs any appropriate action, and sends any message to be spoken on the messagebus
  - The speech client takes the message and sends it to a text to speech service ([Mimic](https://mimic.mycroft.ai/) by default) 
  
-The command line client essentially shortcuts directly to sending the text to Adapt, as there is no speech to text service required. It also handles sending a `speak` message to the chosen text to speech service, like the speech client does.
+The command line client essentially replaces the first two steps, directly sending text onto the messagebus as there is no speech to text service required. It can also handle sending a `speak` message to the chosen text to speech service, like the speech client does.
 
 ## Messagebus
 
 The messagebus is how all of the different parts of Mycroft communicate between each other. It does this by sending different types of messages that contain needed information. For example, one part of Mycroft could send a `speak` message that contains something for Mycroft to say. The message would be carried over the messagebus, and any other service connected to it could read the message and parse it. In the core, the speech or command line client would pick up the messsage and then convert it into speech. 
 
-The messagebus is also hosted as a websocket that other things can communicate with. By default, this websocket is set on 
+The messagebus is also hosted as a websocket, so other applications can monitor and communicate with Mycroft. By default, this websocket is set on 
 `localhost:8181/core`.
 
 ## Speech Client
