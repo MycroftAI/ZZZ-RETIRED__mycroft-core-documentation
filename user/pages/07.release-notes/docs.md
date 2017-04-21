@@ -7,6 +7,56 @@ taxonomy:
 [github-releases]:https://github.com/MycroftAI/mycroft-core/releases
 [View the releases on GitHub here.][github-releases]
 
+# v0.8.10
+Minor release to add 'git' dependency to packaging
+
+# v0.8.9
+This release includes major changes to the organization of Skills.  Now mycroft-core no longer contains any implemented skills.  The Mycroft Skill Manager (msm) is now officially part of mycroft-core, and it is used to automatically retrieve and update the "default skills" from Github at run time.
+
+### Skill system
+* All skills removed from mycroft-core, now auto-downloaded using 'git' #546
+* Auto-reload of Skills fixes  #671, #677, #660
+* Getting out of requirements hell :) #666
+* Moving msm into core # 663  661
+* Removed support for /opt/mycroft/third_parth
+
+### Audio recording fixes #647
+* The wake-up notification sound is now played synchronously, preventing it from being caught in the recorded audio
+* The minimum recorded phrase must be at least 0.5 seconds (instead of 0.1), and must be continuously quiet for that duration
+* The silence threshold is reset every time we begin listening for a wakeword
+* The silence threshold adjusts upward to just above the ambient sound while waiting for the wake-word
+
+### Configuration system
+* Remote configuration can now be overridden by the local mycroft.conf files.  The load priority of configurations is now defined as: DEFAULT (from source code), REMOTE (from home.mycroft.ai), SYSTEM (from /usr/mycroft/mycroft.conf), USER (from ~/.mycroft/mycroft.conf) #652
+* Added ability to document JSON configuration files.  All mycroft.conf configuration settings are now documented.  #654
+* Added ability to specify log-level and to ignore logging of specific messages using mycroft.conf
+
+### CLI improvements: #649
+* The chat history section now wraps long text strings
+* Redesigned the section title to combine the header and underscore lines into a single line to save screen space
+* Recolored several screen elements to make more sense. The query and the chat history now retain the cyan color, etc.
+* The screen fully refreshes periodically, cleaning up garbage that might have accumulated from outside text being written to the terminal
+* The mic meter no longer wraps around the screen when level numbers are too long
+* Added log filtering commands to the CLI. So you can do things like:
+  :filter DEBUG (filters out any lines containing "DEBUG")
+  :filter remove DEBUG (stop filtering "DEBUG")
+  :filter "not this" (filters out any log lines containing "not this")
+  :filter list (displays active filters)
+  :filter clear (removes all filters)
+* Added a ~/.mycroft-cli.conf configuration file. It currently contains the last-used filters.
+* The mycroft.sh scripts were firing up the "fancy" CLI in the background and logging it constantly. This resulted in huge log files because of the constantly updated microphone level indicator.
+
+### Misc
+* The web page in the wifi setup now allows you to show the password characters #478
+* Added and reformatted many comments using Google-style docstrings.  These will be used for automatic documentation generation and are also used by development IDEs.
+
+### Bug Fixes
+* Fedora developers install script fixes # 669. 657
+* Force correct permissions on /opt/mycroft/skill #643
+* Reviving the skill container mechanism #645
+* "mycroft.sh stop" left voice running #641
+* All services now protect against multiple instances #638
+
 
 # v0.8.8
 ### New Features
