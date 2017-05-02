@@ -34,7 +34,7 @@ Just like the Picroft install, the package install runs automatically after a bo
 
 # Interacting with Mycroft
 
-Once you have the processes running in some form, it's very easy to start using Mycroft. Simply say `Hey Mycroft` followed by what you want him to respond to. A simple example is something like `Hey Mycroft, what time is it?`. Take a look at our [skills page](https://docs.mycroft.ai/features) for a more extensive list of what you can ask Mycroft.
+Once you have the processes running in some form, it's very easy to start using Mycroft. Simply say `Hey Mycroft` followed by what you want him to respond to. A simple example is something like `Hey Mycroft, what time is it?`. Take a look at our [skills page](https://docs.mycroft.ai/skills.and.features) for a more extensive list of what you can ask Mycroft.
 
 ##Screens and other tools
 Mycroft uses screens when it runs. This is helpful as you don't need to be watching every screen at once and it allows you to run Mycroft in the background.
