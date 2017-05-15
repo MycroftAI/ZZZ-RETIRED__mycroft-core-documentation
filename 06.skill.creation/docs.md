@@ -34,7 +34,7 @@ The `dialog` folder contains subfolders for each spoken language the skill suppo
 ---my.file.2.dialog
 ```
 
-Take a look at the [Hello World Skill](https://github.com/MycroftAI/mycroft-core/tree/master/mycroft/skills/helloworld) as an example. Its `dialog` folder has an `en-us` subfolder in it, which corresponds to American English. Inside are three dialog files. As an example, look inside `welcome.dialog`. It looks like
+Take a look at the [Hello World Skill](https://github.com/MycroftAI/skill-hello-world) as an example. Its `dialog` folder has an `en-us` subfolder in it, which corresponds to American English. Inside are three dialog files. As an example, look inside `welcome.dialog`. It looks like
 ```
 Any time.
 Glad to be of service.
