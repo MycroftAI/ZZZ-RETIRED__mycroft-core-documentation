@@ -37,28 +37,12 @@ The following packages are required for setting up the development environment,
  - `portaudio19`
  - `mpg123`
 
- The following packages are required for setting up the development environment on Fedora 24
+ The following will set up the development environment on Fedora 25:
 
- - `git`
- - `python 2`
- - `python-setuptools`
- - `python-virtualenv`
- - `pygobject2`
- - `python-virtualenvwrapper`
- - `libtool`
- - `libffi`
- - `libffi-devel`
- - `openssl`
- - `openssl-devel`
- - `autoconf`
- - `bison`
- - `swig`
- - `glib2`
- - `s3cmd`
- - `portaudio`
- - `portaudio-devel`
- - `redhat-rpm-config`
- - `bzip2`
- - `mpg123` (Available in RPMFusion)
+```shell
+sudo dnf install python python-setuptools python-virtualenv python-gobject \
+  python-virtualenvwrapper libtool libffi-devel openssl-devel autoconf bison \
+  swig glib2-devel s3cmd portaudio-devel mpg123 libicu-devel
+```
 
 After installing the necessary packages, make sure to run the `dev_setup.sh` script that is provided in the `mycroft-core` folder.
