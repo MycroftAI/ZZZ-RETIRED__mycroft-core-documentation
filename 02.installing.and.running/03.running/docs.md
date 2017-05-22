@@ -42,7 +42,7 @@ There are 4 screens that run when you start up Mycroft:
 - CLI -- This is the command line interface. You can use it instead of a microphone and simply type commands.
 - Voice -- This is going to be responding to trigger words and what mycroft says. 
 - Skills -- Executes the skills. When debugging skills, this will be a major source of information.
-- Service -- This is the backend for Mycroft. Unless your having major problems with Mycroft, this will be less useful. 
+- Service -- This is the backend for Mycroft. Unless you're having major problems with Mycroft, this will be less useful. 
 
 To see all of the currently running screens, use `screen -list`. To attach one of the screens to see the output, use `screen -r <screen-name>`. For more information about screens, take a look at the [screen manual](https://www.gnu.org/software/screen/manual/screen.html).
 
