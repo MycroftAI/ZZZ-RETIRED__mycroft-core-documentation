@@ -10,7 +10,7 @@ The Adapt Intent parser has the ability to handle multiple vocabularly files. It
 
 
 For a good example of this, look at the Alarm Skill on Github:
-[Alarm](https://github.com/MycroftAI/mycroft-core/tree/dev/mycroft/skills/alarm)
+[Alarm](https://github.com/MycroftAI/skill-alarm)
 
 
 
