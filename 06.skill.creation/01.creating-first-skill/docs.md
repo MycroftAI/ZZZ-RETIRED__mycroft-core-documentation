@@ -98,7 +98,7 @@ def stop(self)
     pass
 ```
 The keyword `pass` does nothing when executed. It is simply used when code is required syntactically but you do not want any code to run.
-For an example of a skill that uses the stop function, look at the [NPR News skill](https://github.com/MycroftAI/mycroft-core/tree/master/mycroft/skills/npr_news).
+For an example of a skill that uses the stop function, look at the [NPR News skill](https://github.com/MycroftAI/skill-npr-news).
 
 #### create_skill
 This is outside of the class definition, and is used to actually create a skill object when the script is called.

@@ -60,7 +60,7 @@ The `vocab` folder contains subfolders for each language supported, like `en-us`
 ---my.file.voc
 ```
 
-Looking at the [Hello World Skill](https://github.com/MycroftAI/mycroft-core/tree/master/mycroft/skills/helloworld) again, there is a `ThankYouKeyword.voc` file in the `en-us` folder that contains the vocabulary for the thank you intent in the Hello World Skill. It contains a list of keywords and phrases that trigger the intent, and looks like the following:
+Looking at the [Hello World Skill](https://github.com/MycroftAI/skill-hello-world) again, there is a `ThankYouKeyword.voc` file in the `en-us` folder that contains the vocabulary for the thank you intent in the Hello World Skill. It contains a list of keywords and phrases that trigger the intent, and looks like the following:
 ```
 thank you
 thanks
