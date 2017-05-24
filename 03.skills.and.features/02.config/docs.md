@@ -12,5 +12,5 @@ Mycroft configuration consists of 3 possible config files.
 When the configuration loader starts, it looks in those locations in that order, and loads ALL configuration. Keys that exist in multiple config files will be overridden by the last file to contain that config value.
 
 
-Skills access these values through the `self.config.get()` function.
+Skills access these values through the `self.config.get()` function. Use caution when modifying the .conf files.
 
