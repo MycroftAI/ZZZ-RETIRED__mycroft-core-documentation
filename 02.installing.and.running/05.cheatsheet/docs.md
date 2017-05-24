@@ -1,5 +1,5 @@
 ---
-title: 'Getting Started'
+title: 'Startup Cheatsheet'
 taxonomy:
     category:
         - docs
