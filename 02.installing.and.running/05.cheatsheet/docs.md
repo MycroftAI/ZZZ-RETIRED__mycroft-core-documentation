@@ -1,11 +1,12 @@
 ---
-title: 'Getting Started'
+title: 'Startup Cheatsheet'
 taxonomy:
     category:
         - docs
 ---
 
-#Mycroft Terminal Commands CheatSheet
+
+#Mycroft Terminal Commands Cheatsheet
 These are some helpful commands to interact with Mycroft through a terminal. You can always call each with the phrase "help" to get more info.
 
 ##Start Mycroft

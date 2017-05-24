@@ -1,5 +1,5 @@
 ---
-title: 'Mycroft Home Device and Account Manager'
+title: 'Mycroft Home and Pairing Mycroft'
 taxonomy:
     category:
         - docs
