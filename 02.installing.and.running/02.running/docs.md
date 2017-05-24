@@ -8,6 +8,9 @@ taxonomy:
 
 ## Running scripts (after a git-clone installation method)
 
+### Note:
+If this is the first time running Mycroft, you will have to pair before Mycroft can answer questions, for tips on that, check out our [Pairing Guide](https://docs.mycroft.ai/installing.and.running/pairing).
+
 ### Using `mycroft.sh`
 Mycroft has a shell script `mycroft.sh` that can be used to run the voice, command line interface, service, and skills processes all at once using screens. To start, just run `./mycroft.sh start` and to kill all processes, run `./mycroft.sh stop`. You can also use `./mycroft.sh start -c` to run just service, skills, and command line or `./mycroft.sh start -v` to run just service, skill, and voice. `./mycroft.sh start -d` runs Mycroft in a quiet mode and opens to the CLI screen immediately. 
 
