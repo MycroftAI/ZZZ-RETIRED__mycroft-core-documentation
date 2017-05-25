@@ -16,12 +16,25 @@ Mycroft has a shell script `mycroft.sh` that can be used to run the voice, comma
 
 ### Using `start.sh`
 Mycroft also provides the shell script `start.sh` to run a large number of common tasks. This script uses the virtualenv created by
-`dev_setup.sh`. The usage statement lists all run targets, but to run a Mycroft stack out of a git checkout, the following processes should be started:
-run `./start.sh service`
-run `./start.sh skills`
-run `./start.sh voice`
+`dev_setup.sh`. The usage statement lists all run targets, but to run a Mycroft stack out of a git checkout, the following processes should be started:  
+run `./start.sh service`  
+run `./start.sh skills`  
+run `./start.sh voice`  
+
+You can also run the CLI client via start. 
+run './start.sh cli'  or for silent operation  
+run './start.sh cli --quiet'  
 
 *Note: The above scripts are blocking, so make sure to run each of them in a separate terminal session.*
+
+### Stopping Mycroft
+To stop Mycroft, run 
+`./mycroft.sh start`  
+You can also stop each individual service by ^c on the correct screen.
+
+If you run mycroft using `./mycroft.sh start`, you can swap to the relevant services using screen commands. For more on that, see below.
+
+
 
 ##Running Mycroft on the Raspberry Pi
 Mycroft starts running immediately when the Pi boots, so there should be nothing you need to do. Check out the interacting with Mycroft below to get using it.
