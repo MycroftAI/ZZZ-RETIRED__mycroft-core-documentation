@@ -64,12 +64,10 @@ def __init__(self):
 ```
 
 #### initialize
-This is where you should load all of the files in the directory and build each intent you want to create. Note that if you want to use regex in your skill, you must also call the inherited method `self.load_regex_files(path)`
+This is where you build each intent you want to create. 
 For the Hello World skill, this looks like
 ```python
 def initialize(self):
-    self.load_data_files(dirname(__file__))
-
     thank_you_intent = IntentBuilder("ThankYouIntent").\
         require("ThankYouKeyword").build()
     self.register_intent(thank_you_intent, self.handle_thank_you_intent)
