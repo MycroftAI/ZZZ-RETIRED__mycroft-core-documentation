@@ -49,3 +49,7 @@ To import these into the ```__init__.py``` file, you will need an intent builder
   intent = IntentBuilder("CurrentWeatherIntent").require(
             "WeatherKeyword").optionally("Location").build()
 ```
+
+For a guide on the syntax of regular expressions, we recommend the following pages:  
+[Regular expression operations (Python documentation)](https://docs.python.org/2/library/re.html)  
+[Python Regular Expressions (Google documentation)](https://developers.google.com/edu/python/regular-expressions)
