@@ -50,3 +50,7 @@ You can pick from these options on the screen menu:
 - SSH - enable/disable ssh option.
 - RESET - wipe the data on the mark 1 and reset to factory default
 - EXIT - leave the menu
+
+# Access Mark 1 CLI
+You can access the CLI of the mark 1 by running the following command from the CLI, then you can interact via text to the mark 1:
+`python -m mycroft.client.text.main --quiet`
