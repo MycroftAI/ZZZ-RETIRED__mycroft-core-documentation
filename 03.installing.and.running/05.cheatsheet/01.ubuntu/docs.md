@@ -17,8 +17,8 @@ cd mycroft-core
 
 ## 2. Start
 ```
-./mycroft.sh start
-./start.sh cli --quiet
+~/mycroft-core/mycroft.sh start
+~/mycroft-core/start.sh cli --quiet
 ```
 
 ## 3. Register
@@ -60,6 +60,24 @@ tail -f /var/log/mycroft-speech-client.log
 
 ### Config file
 ```
-~/mycroft-core/mycroft/configuration
+~/mycroft-core/mycroft/configuration/mycroft.conf
 ```
 
+### Use Mycroft Skill Manager to add a skill
+```
+~/mycroft-core/msm/msm install https://github.com/kfezer/daily_meditation.git
+```
+
+And add to `~/mycroft-core/mycroft/configuration/mycroft.conf`
+```
+"DailyMeditationSkill":{
+  "url_rss":"http://www.themeditationpodcast.com/tmp.xml"
+},
+```
+
+Also try (but read in the readme what to add to mycroft.conf):
+~/mycroft-core/msm/msm search https://github.com/btotharye/tsa-wait-skill
+
+### SSH to Mark 1
+
+TBD
