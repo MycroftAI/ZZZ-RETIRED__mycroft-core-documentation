@@ -30,14 +30,34 @@ Go to home.mycroft.ai to add the device and enter the pairing code.
 Voice commands - https://docs.mycroft.ai/mark-1/using.mark1
 
 ## 4. Add skill
+
+#### 4.1 Manually
+Let's add spanish radio skill: "Mycroft, spanish news" using 2 commands:
 ```
 cd /ops/mycroft/skills
 git clone https://github.com/ChrisFernandez/skill-radio-rne.git
 ```
 
-"Mycroft, spanish news"
-
 Other skills to try - https://github.com/MycroftAI/mycroft-skills
+
+#### 4.2 Automatically, using MSM
+Let's add meditation skill: "Mycroft, I am stressed".
+
+Mycroft Skill Manager is available for you with mycroft-core. Here is how to add a skill:
+```
+~/mycroft-core/msm/msm install https://github.com/kfezer/daily_meditation.git
+```
+
+And add to 3 lines to `~/mycroft-core/mycroft/configuration/mycroft.conf`:
+```
+"DailyMeditationSkill":{
+  "url_rss":"http://www.themeditationpodcast.com/tmp.xml"
+},
+```
+
+Also try (but read in the readme what to add to mycroft.conf):
+`~/mycroft-core/msm/msm search https://github.com/btotharye/tsa-wait-skill`
+
 
 ## 5. Miscellaneous
 
@@ -63,21 +83,8 @@ tail -f /var/log/mycroft-speech-client.log
 ~/mycroft-core/mycroft/configuration/mycroft.conf
 ```
 
-### Use Mycroft Skill Manager to add a skill
-```
-~/mycroft-core/msm/msm install https://github.com/kfezer/daily_meditation.git
-```
-
-And add to `~/mycroft-core/mycroft/configuration/mycroft.conf`
-```
-"DailyMeditationSkill":{
-  "url_rss":"http://www.themeditationpodcast.com/tmp.xml"
-},
-```
-
-Also try (but read in the readme what to add to mycroft.conf):
-~/mycroft-core/msm/msm search https://github.com/btotharye/tsa-wait-skill
-
 ### SSH to Mark 1
 
-TBD
+1. "Mycroft what is your ip address?"
+1. ssh ip@xxx.xxx.xx.x
+1. password: mycroft
