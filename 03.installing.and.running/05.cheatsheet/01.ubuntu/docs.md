@@ -5,7 +5,7 @@ taxonomy:
         - docs
 ---
 
-## 1. Install
+## 1. Install a skill on Mark 1 device:
 ```
 cd ~/
 git clone git@github.com:MycroftAI/mycroft-core.git
@@ -47,6 +47,7 @@ Mycroft Skill Manager is available for you with mycroft-core. Here is how to add
 ```
 ~/mycroft-core/msm/msm install https://github.com/kfezer/daily_meditation.git
 ```
+~/mycroft-core/msm/msm install https://github.com/btotharye/tsa-wait-skill
 
 And add to 3 lines to `~/mycroft-core/mycroft/configuration/mycroft.conf`:
 ```
@@ -88,3 +89,14 @@ tail -f /var/log/mycroft-speech-client.log
 1. "Mycroft what is your ip address?"
 1. ssh ip@xxx.xxx.xx.x
 1. password: mycroft
+
+Config file: `/etc/mycroft/mycroft.conf`
+Logs: `/var/log/mycroft`
+
+### MSM
+* msm list | sort | more
+
+### Version
+```
+apt list --installed |grep mycroft-core
+```
