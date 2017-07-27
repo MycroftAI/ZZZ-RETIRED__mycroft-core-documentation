@@ -1,9 +1,23 @@
 ---
-title: Skills SDK
+title: Skills SDK (Deprecated)
 taxonomy:
     category:
         - docs
 ---
+
+#### Mycroft Skills Framework and SDK is currently deprecated. You can still use the skills container for debugging either on the pi units (Mark 1 and picroft), or desktop. 
+
+For the pi units
+```
+mycroft-skill-container /path/to/skill
+```
+
+For the desktop
+```
+./start.sh skill_container /path/to/skill
+```
+
+-----
 
 ## What Makes a Skill
 A skill is a class that extends the [MycroftSkill](https://github.com/MycroftAI/mycroft-core/blob/master/mycroft/skills/core.py#L98) class. It is instantiated by the skills container via a [create_skill](https://github.com/MycroftAI/skill-spelling/blob/master/__init__.py#L57) method on the skill module. See Mycroft's [spelling skill](https://github.com/MycroftAI/skill-spelling) for a simple example.
