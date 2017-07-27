@@ -5,7 +5,7 @@ taxonomy:
         - docs
 ---
 
-## 1. Install a skill on Mark 1 device:
+## 1. Install Mycroft-Core:
 ```
 cd ~/
 git clone git@github.com:MycroftAI/mycroft-core.git
@@ -83,15 +83,6 @@ tail -f /var/log/mycroft-speech-client.log
 ```
 ~/mycroft-core/mycroft/configuration/mycroft.conf
 ```
-
-### SSH to Mark 1
-
-1. "Mycroft what is your ip address?"
-1. ssh ip@xxx.xxx.xx.x
-1. password: mycroft
-
-Config file: `/etc/mycroft/mycroft.conf`
-Logs: `/var/log/mycroft`
 
 ### MSM
 * msm list | sort | more
