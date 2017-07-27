@@ -6,7 +6,7 @@ taxonomy:
 ---
 
 
-The Adapt Intent parser has the ability to handle multiple vocabularly files. It also can parse sentences to find the key words. This means that vocabulary files need only focus on keywords, not specific uterances. 
+The Adapt Intent parser has the ability to handle multiple vocabulary files. It also can parse sentences to find the key words. This means that vocabulary files need only focus on keywords, not specific uterances. 
 
 
 For a good example of this, look at the Alarm Skill on Github:
