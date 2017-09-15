@@ -10,15 +10,14 @@ taxonomy:
 Once you have your development environment set up, you need to download the latest version of `mycroft-core` from github.
 To do this, you can either directly download it from our [github page](https://github.com/MycroftAI/mycroft-core) or, if you already know how to use git, you can clone it using `git clone https://github.com/MycroftAI/mycroft-core.git`.
 
-## Creating a Development Environment in Ubuntu/Debian
+## Creating a Development Environment in Ubuntu/Debian/Fedora/Arch
  - Get into the mycroft-core folder you downloaded using `cd mycroft-core`
- - run `./build_host_setup_debian.sh` (installs debian packages with apt-get, please read it)
- - run `./dev_setup.sh` (feel free to read it, as well)
+ - run `./dev_setup.sh` (feel free to read it)
 
 ## Starting in other environments
 
 The following packages are required for setting up the development environment,
- and are what is installed by `build_host_setup.sh`
+ and are what is installed by `dev_setup.sh`, prior to the pip requirements.
 
  - `git`
  - `python 2`
