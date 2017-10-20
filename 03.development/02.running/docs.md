@@ -4,49 +4,27 @@ taxonomy:
     category:
         - docs
 ---
-#   Guide to Running Mycroft
+# Running Mycroft
 
-## Running scripts (after a git-clone installation method)
+## Git Install
+Mycroft provides `start-mycroft.sh` to perform common tasks. This script uses a virtualenv created by `dev_setup.sh`.  Assuming you installed mycroft-core in your home directory run:
+- `cd ~/mycroft-core`
+- `./start-mycroft.sh debug`
 
-### Note:
-If this is the first time running Mycroft, you will have to pair before Mycroft can answer questions, for tips on that, check out our [Pairing Guide](https://docs.mycroft.ai/installing.and.running/pairing).
+The "debug" command will start the background services (microphone listener, skill, messagebus, and audio subsystems) as well as bringing up a text-based Command Line Interface (CLI) you can use to interact with Mycroft and see the contents of the various logs. Alternatively you can run `./start-mycroft.sh all` to begin the services without the command line interface.  Later you can bring up the CLI using `./start-mycroft.sh cli`.
 
-### Using `mycroft.sh`
-Mycroft has a shell script `mycroft.sh` that can be used to run the voice, command line interface, service, and skills processes all at once using screens. To start, just run `./mycroft.sh start` and to kill all processes, run `./mycroft.sh stop`. You can also use `./mycroft.sh start -c` to run just service, skills, and command line or `./mycroft.sh start -v` to run just service, skill, and voice. `./mycroft.sh start -d` runs Mycroft in a quiet mode and opens to the CLI screen immediately. 
+The background services can be stopped as a group with:
+- `./stop-mycroft.sh`
 
-### Using `start.sh`
-Mycroft also provides the shell script `start.sh` to run a large number of common tasks. This script uses the virtualenv created by
-`dev_setup.sh`. The usage statement lists all run targets, but to run a Mycroft stack out of a git checkout, the following processes should be started:  
-run `./start.sh service`  
-run `./start.sh skills`  
-run `./start.sh voice`  
+## Package Install
+The debian package automatically starts Mycroft at boot.
 
-You can also run the CLI client via start. 
-run './start.sh cli'  or for silent operation  
-run './start.sh cli --quiet'  
-
-*Note: The above scripts are blocking, so make sure to run each of them in a separate terminal session.*
-
-### Stopping Mycroft
-To stop Mycroft, run 
-`./mycroft.sh start`  
-You can also stop each individual service by ^c on the correct screen.
-
-If you run mycroft using `./mycroft.sh start`, you can swap to the relevant services using screen commands. For more on that, see below.
-
-
-
-##Running Mycroft on the Raspberry Pi
+## Raspberry Pi
 Mycroft starts running immediately when the Pi boots, so there should be nothing you need to do. Check out the interacting with Mycroft below to get using it.
 
-
-##KDE Method to Starting and Stopping Mycroft
-Using the Plasmoid
+## KDE Plasmoid
 Click on the Mycroft icon to open it up.  You”ll need to click the ▶️️ button at the top to tell Mycroft to begin listening.  Then you can say “Hey Mycroft, register my device” to create your pairing with home.mycroft.ai.  You’ll immediately notice the text is both spoken and displayed on screen in the widget.
 In the alpha there were special handlers for “What’s the weather like?” that began to show the possibilities of combining voice interaction with a screen, combining voice and visuals.  We’ll be exposing those capabilities to our Skill API soon for other developers to explore.
-
-##Running Mycroft after a package install
-Just like the Picroft install, the package install runs automatically after a boot. 
 
 # Interacting with Mycroft
 
@@ -64,53 +42,30 @@ To see all of the currently running screens, use `screen -list`. To attach one o
 
 
 
-##Command Line tools for the Raspberry Pi
+## Command Line tools for the Raspberry Pi
 The Raspberry Pi doesn't use screens, just runs everything in the background as you effectively just have 1 terminal window running. To interact with the different elements of Mycroft on the pi, you can run any of the following commands from the command-line.
 
 By default, Picroft boots into the view-log mode. To get back to this at any time, type
-- `view_log'
+- `view_log`
 
 in the terminal. To get out of this, press Control-C.
 
 There are 4 other Mycroft tools you can access from the command line as well. 
 
 
-###Mycroft Skills Manager
-The Mycroft Skills Manager is a work in progress. It does allow you to install new skills hosted on the github Skills repo:
+### Mycroft Skills Manager
+Mycroft Skills Manager (msm) is a command line tool used to add additional skills to Mycroft. It can install any skill listed on the [Mycroft Skills Repository](https://github.com/MycroftAI/mycroft-skills).
 
-[Mycroft Skills Repository](https://github.com/MycroftAI/mycroft-skills)
+You can get instructions on using it with:
 
-You can get information on it through:
+- `msm -h`
 
-- 'msm' 
+#### Other features of msm:
 
-####Other features of msm:
-
-- 'msm list'
+- `msm list`
 
 Will list all currently available skills that are hosted on the repo.
 
-- 'msm install $GITHUB PATH OR SKILL NAME'
+- `msm install $GITHUB PATH OR SKILL NAME`
 
-Allows you to install from the given repo or install a skill by name. Some skills have dependancies that the msm may miss, so make sure to look at github to ensure the skill will work. It effectively clones the skill for you and places it in the correct directory.
-
-###Command Line Client
-
-- 'cli'
-
-###Say
-This let's you send a one-shot command to Mycroft by using say:
-- 'say $WHAT YOU WANT TO SAY TO MYCROFT'
-
-For example:
-- 'say what's the weather'
-
-Activates the weather skill and has Mycroft read you the weather. You are then left back in console.
-
-###Test Microphone
-
-- 'test_microphone'
-
-This let's you record from your microphone for a few seconds and then plays it back. Useful for making sure those two devices work.
-
-
+Allows you to install from the given repo or install a skill by name. Some skills have dependancies that the msm may miss, so make sure to look at github to ensure the skill will work. It effectively clones the skill for you, sets up dependencies, and places it in the correct directory.
